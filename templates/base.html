@@ -1,0 +1,56 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransformAPI</title>
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}" type="text/css">
+</head>
+<body>
+    <div>
+        <h1>Transform Tool for Interactive API</h1>
+    </div>
+    <div>
+      <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <h4 class="alert-heading">Warning!</h4>
+        <p class="mb-0">This is a tool to make transformations in API after which it can be executed. 
+          This tool works only when Input is with proper indentation. 
+          "Parent company ID" and "Received date cannot be in future" is in development state </p>
+      </div>
+    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="TagNumber">Tag Number is Not Unique
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="ReceivedDate">Received date cannot be in Future</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="ParentCompany">Parent Company ID</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    {%block content%}
+
+    {%endblock%}
+
+</body>
+</html>

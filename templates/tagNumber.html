@@ -1,0 +1,43 @@
+
+{%extends "base.html"%}
+{%block content%}
+
+<form method="POST">
+    {%csrf_token%}
+    <fieldset>
+    
+    <div class="form-group" >
+          <label for="InputAPI" class="form-label mt-4">InputAPI</label>
+          <textarea class="form-control" name="InputAPI" id="InputAPI" rows="3"
+          required>{{I}}</textarea>
+    </div>
+    
+    <div class="form-group">
+          <label for="OutputAPI" class="form-label mt-4">OutputAPI</label>
+          <textarea class="form-control" name="OutputAPI" id="OutputAPI" rows="3"
+          >{{O}}</textarea>
+    </div>
+    
+    <div class="form-group">
+      <fieldset>
+        <label class="form-label mt-4" for="readOnlyInput">tagnumber</label>
+        <input class="form-control"  id="tagnumber" name="tagnumber" type="text" placeholder="tagnumber" value={{T}}>
+      </fieldset>
+    </div>
+    
+    <br><br>
+    <div>
+    </fieldset>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+
+    </fieldset>
+        <button type="reset" class="btn btn-primary">Clear</button>
+    </fieldset>
+    </div>
+
+
+    </form>
+
+
+{%endblock%}
