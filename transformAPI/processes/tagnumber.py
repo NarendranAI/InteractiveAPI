@@ -1,16 +1,16 @@
+
 import re
 
-
-def processTagNumber(txt):
-    API = txt
+def processTagNumber(x):
     try:
-        a, b = re.findall('bpart_id.*and ', API)
-    except:
-        return "ERROR: Please check the input API for indentation (or) value", "Not_Found"
-    newAPI = API.replace(a, '')
-    newAPI = newAPI.replace(b, '')
- 
-    match = re.search('tagno = \'(.*)\'', txt)
-
+        
+        res=re.search("search.*?tagno = \'[0-9]*?\'\"",x)
+        tagno=re.search("tagno = \'(.*)\'",res[0])
+        # print(res[0])
+        # print(tagno.group(1))
+        newtxt=x.replace(res[0],"search_criteria=\"tagno = \'{}\'\"".format(tagno.group(1)))
+        return newtxt, tagno.group(1)
     
-    return newAPI, match.group(1)
+    except:
+        # print("ERROR")
+        return "Please check the Input API","NA"
